@@ -1,0 +1,510 @@
+Widgets:
+<Widgets>:
+    rows: 13
+    Label:
+        text: "Twisting Machine"
+        size_hint_y: None
+        height: "50dp"
+
+    # First row
+    GridLayout:
+        cols: 9
+        Label:
+            text: ""
+            size_hint_x: None
+            size_hint_y: None
+            height: "25dp"
+            width: "25dp"
+        Label:
+            text: "Core yarn count(Ne):"
+            size_hint_x: None
+            size_hint_y: None
+            height: "25dp"
+            width: "150dp"
+        TextInput:
+            id: input_field_a
+            multiline: False
+            size_hint_x: None
+            size_hint_y: None
+            height: "30dp"
+            width: "150dp"
+        BoxLayout:
+            size_hint_x: None
+            size_hint_y: None
+            height: "30dp"
+            width: "30dp"
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, 1  # Border color (black)
+                Line:
+                    width: 3.5  # Border thickness
+                    rectangle: (self.x, self.y, self.width, self.height)
+
+            Button:
+                on_press: root.click('input_field_a', 'a')
+                background_normal: "right.jpg"
+
+        Label:
+            text: ""
+            size_hint_x: None
+            size_hint_y: None
+            height: "25dp"
+            width: "50dp"
+        Label:
+            text: "TPI:"
+            size_hint_x: None
+            size_hint_y: None
+            height: "25dp"
+            width: "150dp"
+        TextInput:
+            id: input_field_g
+            multiline: False
+            size_hint_x: None
+            size_hint_y: None
+            height: "30dp"
+            width: "150dp"
+        BoxLayout:
+            size_hint_x: None
+            size_hint_y: None
+            height: "30dp"
+            width: "30dp"
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, 1  # Border color (black)
+                Line:
+                    width: 3.5  # Border thickness
+                    rectangle: (self.x, self.y, self.width, self.height)
+
+            Button:
+                on_press: root.click('input_field_g', 'g')
+                background_normal: "right.jpg"
+
+    # Second row
+    GridLayout:
+        cols: 11
+        Label:
+            text: ""
+            size_hint_x: None
+            size_hint_y: None
+            height: "25dp"
+            width: "25"
+        Label:
+            text: "Yarn count 1(Ne):"
+            size_hint_x: None
+            size_hint_y: None
+            height: "25dp"
+            width: "150dp"
+        TextInput:
+            id: input_field_b
+            multiline: False
+            size_hint_x: None
+            size_hint_y: None
+            height: "30dp"
+            width: "150dp"
+        BoxLayout:
+            size_hint_x: None
+            size_hint_y: None
+            height: "30dp"
+            width: "30dp"
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, 1  # Border color (black)
+                Line:
+                    width: 3.5  # Border thickness
+                    rectangle: (self.x, self.y, self.width, self.height)
+
+            Button:
+                on_press: root.click('input_field_b', 'b')
+                background_normal: "right.jpg"
+        Label:
+            text: ""
+            size_hint_x: None
+            size_hint_y: None
+            height: "25dp"
+            width: "50dp"
+        Label:
+            text: "Twist length:"
+            size_hint_x: None
+            size_hint_y: None
+            height: "25dp"
+            width: "150dp"
+        Label:
+            text: ""  # Placeholder for displaying results
+            size_hint_x: None
+            size_hint_y: None
+            height: "30dp"
+            width: "150dp"
+            id: result_label_i  # Unique id for h result
+
+        BoxLayout:
+            size_hint_x: None
+            size_hint_y: None
+            height: "30dp"
+            width: "80dp"
+            canvas.before:
+                Color:
+                    rgba: 1, 1, 1, 1  # Background color
+                Line:
+                    width: 3.5  # Border thickness
+                    rectangle: (self.x, self.y, self.width, self.height)
+
+            Button:
+                text: "Calculate"
+                on_press: root.calculate_i()
+                color: 1, 1, 1, 1
+
+    # Third row
+    GridLayout:
+        cols: 11
+        Label:
+            text: ""
+            size_hint_x: None
+            size_hint_y: None
+            height: "25dp"
+            width: "25"
+        Label:
+            text: "Yarn count 2(Ne):"
+            size_hint_x: None
+            size_hint_y: None
+            height: "25dp"
+            width: "150dp"
+        TextInput:
+            id: input_field_c
+            multiline: False
+            size_hint_x: None
+            size_hint_y: None
+            height: "30dp"
+            width: "150dp"
+        BoxLayout:
+            size_hint_x: None
+            size_hint_y: None
+            height: "30dp"
+            width: "30dp"
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, 1  # Border color (black)
+                Line:
+                    width: 3.5  # Border thickness
+                    rectangle: (self.x, self.y, self.width, self.height)
+
+            Button:
+                on_press: root.click('input_field_c', 'c')
+                background_normal: "right.jpg"
+        Label:
+            text: ""
+            size_hint_x: None
+            size_hint_y: None
+            height: "25dp"
+            width: "50dp"
+        Label:
+            text: "Resultant count:"
+            size_hint_x: None
+            size_hint_y: None
+            height: "25dp"
+            width: "150dp"
+        Label:
+            text: ""  # Placeholder for displaying results
+            size_hint_x: None
+            size_hint_y: None
+            height: "30dp"
+            width: "150dp"
+            id: result_label_h  # Unique id for i result
+
+        BoxLayout:
+            size_hint_x: None
+            size_hint_y: None
+            height: "30dp"
+            width: "80dp"
+            canvas.before:
+                Color:
+                    rgba: 1, 1, 1, 1  # Background color
+                Line:
+                    width: 3.5  # Border thickness
+                    rectangle: (self.x, self.y, self.width, self.height)
+
+            Button:
+                text: "Calculate"
+                on_press: root.calculate_h()
+                color: 1, 1, 1, 1
+
+    # Fourth row
+    GridLayout:
+        cols: 5
+        Label:
+            text: ""
+            size_hint_x: None
+            size_hint_y: None
+            height: "25dp"
+            width: "25"
+        Label:
+            text: "Yarn count 3(Ne):"
+            size_hint_x: None
+            size_hint_y: None
+            height: "25dp"
+            width: "150dp"
+        TextInput:
+            id: input_field_d
+            multiline: False
+            size_hint_x: None
+            size_hint_y: None
+            height: "30dp"
+            width: "150dp"
+
+        # Button with border
+        BoxLayout:
+            size_hint_x: None
+            size_hint_y: None
+            height: "30dp"
+            width: "30dp"
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, 1  # Border color (black)
+                Line:
+                    width: 3.5  # Border thickness
+                    rectangle: (self.x, self.y, self.width, self.height)
+
+            Button:
+                on_press: root.click('input_field_d', 'd')
+                background_normal: "right.jpg"
+
+    # Fifth row
+    GridLayout:
+        cols: 5
+        Label:
+            text: ""
+            size_hint_x: None
+            size_hint_y: None
+            height: "25dp"
+            width: "25dp"
+        Label:
+            text: "Yarn count 4(Ne):"
+            size_hint_x: None
+            size_hint_y: None
+            height: "25dp"
+            width: "150dp"
+        TextInput:
+            id: input_field_e
+            multiline: False
+            size_hint_x: None
+            size_hint_y: None
+            height: "30dp"
+            width: "150dp"
+
+        # Button with border
+        BoxLayout:
+            size_hint_x: None
+            size_hint_y: None
+            height: "30dp"
+            width: "30dp"
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, 1  # Border color (black)
+                Line:
+                    width: 3.5  # Border thickness
+                    rectangle: (self.x, self.y, self.width, self.height)
+
+            Button:
+                on_press: root.click('input_field_e', 'e')
+                background_normal: "right.jpg"
+    Label:
+        text: ""
+        size_hint_x: None
+        size_hint_y: None
+        height: "50dp"
+        width: "25dp"
+    GridLayout:
+        cols:5
+        Label:
+            text: ""
+            size_hint_x: None
+            size_hint_y: None
+            height: "25dp"
+            width: "25dp"
+        Label:
+            text: "Winding speed(m/min):"
+            size_hint_x: None
+            size_hint_y: None
+            height: "25dp"
+            width: "150dp"
+        TextInput:
+            id: input_field_WS
+            multiline: False
+            size_hint_x: None
+            size_hint_y: None
+            height: "30dp"
+            width: "150dp"
+
+        # Button with border
+        BoxLayout:
+            size_hint_x: None
+            size_hint_y: None
+            height: "30dp"
+            width: "30dp"
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, 1  # Border color (black)
+                Line:
+                    width: 3.5  # Border thickness
+                    rectangle: (self.x, self.y, self.width, self.height)
+
+            Button:
+                on_press: root.click('input_field_WS', 'WS')
+                background_normal: "right.jpg"
+    GridLayout:
+        cols:5
+        Label:
+            text: ""
+            size_hint_x: None
+            size_hint_y: None
+            height: "25dp"
+            width: "25dp"
+        Label:
+            text: "Angle(θ):"
+            size_hint_x: None
+            size_hint_y: None
+            height: "25dp"
+            width: "150dp"
+        TextInput:
+            id: input_field_Angle
+            multiline: False
+            size_hint_x: None
+            size_hint_y: None
+            height: "30dp"
+            width: "150dp"
+
+        # Button with border
+        BoxLayout:
+            size_hint_x: None
+            size_hint_y: None
+            height: "30dp"
+            width: "30dp"
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, 1  # Border color (black)
+                Line:
+                    width: 3.5  # Border thickness
+                    rectangle: (self.x, self.y, self.width, self.height)
+
+            Button:
+                on_press: root.click('input_field_Angle', 'Angle')
+                background_normal: "right.jpg"
+    GridLayout:
+        cols:5
+        Label:
+            text: ""
+            size_hint_x: None
+            size_hint_y: None
+            height: "25dp"
+            width: "25dp"
+        Label:
+            text: "Beam length(m):"
+            size_hint_x: None
+            size_hint_y: None
+            height: "25dp"
+            width: "150dp"
+        TextInput:
+            id: input_field_Len
+            multiline: False
+            size_hint_x: None
+            size_hint_y: None
+            height: "30dp"
+            width: "150dp"
+
+        # Button with border
+        BoxLayout:
+            size_hint_x: None
+            size_hint_y: None
+            height: "30dp"
+            width: "30dp"
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, 1  # Border color (black)
+                Line:
+                    width: 3.5  # Border thickness
+                    rectangle: (self.x, self.y, self.width, self.height)
+
+            Button:
+                on_press: root.click('input_field_Len', 'Len')
+                background_normal: "right.jpg"
+    GridLayout:
+        cols:5
+        Label:
+            text: ""
+            size_hint_x: None
+            size_hint_y: None
+            height: "25dp"
+            width: "25dp"
+        Label:
+            text: "Bobbin dia(m):"
+            size_hint_x: None
+            size_hint_y: None
+            height: "25dp"
+            width: "150dp"
+        TextInput:
+            id: input_field_Dia
+            multiline: False
+            size_hint_x: None
+            size_hint_y: None
+            height: "30dp"
+            width: "150dp"
+
+        # Button with border
+        BoxLayout:
+            size_hint_x: None
+            size_hint_y: None
+            height: "30dp"
+            width: "30dp"
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, 1  # Border color (black)
+                Line:
+                    width: 3.5  # Border thickness
+                    rectangle: (self.x, self.y, self.width, self.height)
+
+            Button:
+                on_press: root.click('input_field_Dia', 'Dia')
+                background_normal: "right.jpg"
+    GridLayout:
+        cols:5
+        Label:
+            text: ""
+            size_hint_x: None
+            size_hint_y: None
+            height: "25dp"
+            width: "25dp"
+        Label:
+            text: "Twist(s/z):"
+            size_hint_x: None
+            size_hint_y: None
+            height: "25dp"
+            width: "150dp"
+        TextInput:
+            id: input_field_twist
+            multiline: False
+            size_hint_x: None
+            size_hint_y: None
+            height: "30dp"
+            width: "150dp"
+
+        # Button with border
+        BoxLayout:
+            size_hint_x: None
+            size_hint_y: None
+            height: "30dp"
+            width: "30dp"
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, 1  # Border color (black)
+                Line:
+                    width: 3.5  # Border thickness
+                    rectangle: (self.x, self.y, self.width, self.height)
+
+            Button:
+                on_press: root.click('input_field_twist', 'twist')
+                background_normal: "right.jpg"
+    Label:
+        text: ""
+        size_hint_x: None
+        size_hint_y: None
+        height: "50dp"
+        width: "25dp"
